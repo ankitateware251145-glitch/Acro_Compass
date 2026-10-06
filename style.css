@@ -1,0 +1,344 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: #f5f7fb;
+  color: #172033;
+}
+
+header {
+  background: #101828;
+  color: white;
+  padding: 25px 6%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  background: #2563eb;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+header h1 {
+  font-size: 27px;
+}
+
+header p {
+  color: #b8c1d1;
+  margin-top: 5px;
+}
+
+main {
+  width: 92%;
+  max-width: 1400px;
+  margin: 30px auto;
+}
+
+.search-panel {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.06);
+
+  display: grid;
+  grid-template-columns: 1fr 55px 1fr 160px 120px;
+  gap: 15px;
+  align-items: end;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #667085;
+}
+
+select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #d0d5dd;
+  border-radius: 10px;
+  background: white;
+  font-size: 15px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.swap {
+  height: 45px;
+  border-radius: 10px;
+  background: #eef4ff;
+  color: #2563eb;
+  font-size: 22px;
+}
+
+.route-btn {
+  height: 45px;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-weight: 700;
+}
+
+.clear-btn {
+  height: 45px;
+  border-radius: 10px;
+  background: #f2f4f7;
+  color: #344054;
+}
+
+#error {
+  grid-column: 1 / -1;
+  color: #d92d20;
+  font-size: 14px;
+}
+
+.popular {
+  margin: 25px 0;
+}
+
+.popular h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.popular-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.popular-list button {
+  background: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #e4e7ec;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.map-card,
+.route-card {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.06);
+}
+
+.map-header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.map-header h2 {
+  font-size: 20px;
+}
+
+.map-header span {
+  color: #667085;
+  font-size: 13px;
+}
+
+.legend {
+  display: flex;
+  gap: 12px;
+}
+
+.map-container {
+  padding: 15px;
+}
+
+#campusMap {
+  width: 100%;
+  height: auto;
+  background: #edf6ed;
+  border-radius: 15px;
+}
+
+.campus {
+  fill: #edf6ed;
+}
+
+.road {
+  fill: none;
+  stroke: #d0d5dd;
+  stroke-width: 34;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.building rect {
+  fill: #dbeafe;
+  stroke: #2563eb;
+  stroke-width: 2;
+}
+
+.building text {
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.location circle {
+  fill: #2563eb;
+  stroke: white;
+  stroke-width: 4;
+}
+
+.location text {
+  text-anchor: middle;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.route-line {
+  fill: none;
+  stroke: #12b76a;
+  stroke-width: 14;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.route-card {
+  padding: 25px;
+}
+
+.route-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #667085;
+}
+
+.big-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.route-result h2 {
+  margin-bottom: 20px;
+}
+
+.route-summary {
+  background: #f0fdf4;
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.route-summary strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 15px;
+}
+
+.stat strong {
+  font-size: 20px;
+}
+
+.stat span {
+  display: block;
+  color: #667085;
+  font-size: 12px;
+}
+
+.directions {
+  margin-top: 20px;
+}
+
+.directions ol {
+  padding-left: 22px;
+}
+
+.directions li {
+  padding: 8px 0;
+  color: #475467;
+}
+
+.start-marker {
+  fill: #2563eb !important;
+}
+
+.destination-marker {
+  fill: #ef4444 !important;
+}
+
+@media(max-width: 900px) {
+
+  .search-panel {
+    grid-template-columns: 1fr 55px 1fr;
+  }
+
+  .route-btn,
+  .clear-btn {
+    grid-column: span 1;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 600px) {
+
+  header {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 21px;
+  }
+
+  main {
+    width: 94%;
+  }
+
+  .search-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .swap {
+    width: 50px;
+  }
+
+  .route-btn,
+  .clear-btn {
+    grid-column: auto;
+  }
+
+  .map-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .legend {
+    flex-wrap: wrap;
+  }
+
+  .stats {
+    gap: 15px;
+  }
+}
